@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2>Total: {{total.total}}</h2>
+  <h2>Rank: </h2>
+    <table border="1px" class="table table-striped table-success ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Marks</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{student.student}}</td>
+            <td>{{student.subject}}</td>
+            <td>{{student.marks}}</td>
+            
+          </tr>
+            {% endfor %}
+          
+        </tbody>
+    </table>
+<div>
+
+{% endblock %}

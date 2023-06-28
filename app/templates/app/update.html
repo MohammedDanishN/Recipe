@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" value="{{recipe.recipe_name}}" name="recipe_name" ><br/>
+    <textarea name="recipe_description"  cols="30" rows="3">{{recipe.recipe_description}}</textarea><br/>
+    <input type="file" name="recipe_image"/><br/>
+    <input type="submit" value="submit">
+</form>
+{% endblock content %}
